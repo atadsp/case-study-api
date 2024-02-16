@@ -5,7 +5,7 @@ export const checkEnvironment = (): {
 } => {
   let env_check = true;
   const missing_envs = [] as string[];
-  const envs = ["PORT", "LOG_LEVEL", "NODE_VERSION", "FRONT_END_PRIVATE_KEY"];
+  const envs = ["PORT", "LOG_LEVEL", "NODE_VERSION"];
 
   envs.forEach((env) => {
     const env_val = process.env[env];
