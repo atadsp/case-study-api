@@ -1,0 +1,36 @@
+{
+  "compilerOptions": {
+    "target": "es2022",
+    "module": "commonjs",
+    "strict": true,
+    "moduleResolution": "node",
+    "baseUrl": ".",
+    "outDir": "build",
+    "paths": {
+      "@root/*": ["*"],
+      "@interfaces/*": ["server/utilities/interfaces/*"],
+      "@log": ["server/utilities/log.class"],
+      "@middleware/*": ["server/middlewares/*"],
+      "@utility": ["server/utilities/utility"]
+    },
+    "typeRoots": ["./node_modules/@types"],
+    "esModuleInterop": true
+  },
+  "exclude": [
+    "/**/*.test.ts"
+  ],
+  "include": [
+    "interfaces/*",
+    "server/*",
+    "types/*",
+    "index.d.ts"
+  ],
+  "plugins": [
+    {
+      "transform": "ts-transform-paths"
+    }
+  ],
+  "ts-node": {
+    "require": ["tsconfig-paths/register"]
+  }
+}

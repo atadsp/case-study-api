@@ -1,0 +1,116 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "TBD",
+    "version": "1.0.0",
+    "title": "Case Study API",
+    "contact": {
+      "email": "atadsp@gmail.com"
+    },
+    "license": {
+      "name": "Apache 2.0",
+      "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+    }
+  },
+  "schemes": ["https"],
+  "host": "localhost:3001",
+  "basePath": "/api/v1",
+  "paths": {
+    "/api/v1/validate-credit-card": {
+      "get": {
+        "summary": "Validate Credit Card Number",
+        "description": "this endpoint validates credit cards",
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "cc_number",
+            "description": "Credit Card Number",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            },
+            "example": 378282246310005
+          },
+          {
+            "in": "body",
+            "name": "exp_date",
+            "description": "Expiration Date",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "example": "01/25"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation"
+          },
+          "422": {
+            "description": "Missing Parameters"
+          },
+          "400": {
+            "description": "Invalid Credit Card"
+          }
+        }
+      }
+    },
+    "/healthz": {
+      "get": {
+        "summary": "Health Check Endpoint",
+        "description": "A simple endpoint to check if the server is up or not",
+        "produces": ["application/json"],
+        "parameters": [
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "$ref": "#/definitions/healthzResponse"
+            }
+          }
+        }
+      }
+    }
+  },
+
+  "definitions": {
+    "healthzResponse": {
+      "type": "object",
+      "properties": {
+        "uptime": {
+          "type": "number"
+        },
+        "message": {
+          "type": "string"
+        },
+        "date": {
+          "type": "string"
+        }
+      }
+    },
+    "successfulResponse": {
+      "type": "object",
+      "properties": {
+        "statusCode": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        }
+      }
+    },
+    "InvalidResponse": {
+      "type": "object",
+      "properties": {
+        "statusCode": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

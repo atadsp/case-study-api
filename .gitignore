@@ -1,0 +1,17 @@
+/node_modules
+.env
+yarn.lock
+
+# Ignores compiled TypeScript files
+/**/*.map
+/**/*.js
+/build
+!/*.js
+
+coverage
+/coverage
+
+test-report.xml
+
+.DS_Store
+/**/.DS_Store
