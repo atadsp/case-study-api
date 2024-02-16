@@ -9,13 +9,11 @@ A restful API
 3. ```nvm install```
 4. ```nvm use```
 5. ```npm install```
-6. ```npm install -g nodemon```
-7. fill in .env file in the root directory
+6. fill in .env file in the root directory
 
 ## Launch
 - run ```nvm use```
 - To start the project without watching for changes (like on a web server) run: ```npm start```
-- To start the project, and watch for changes (like when developing) run: ```npm run watch```
 
 ## Testing
 - run ```npm test``` to run unit tests
@@ -28,4 +26,3 @@ A restful API
 - git: https://git-scm.com/
 - node version manager: https://github.com/nvm-sh/nvm#installing-and-updating
 - node: https://nodejs.org/en/
-- nodemon: npm install -g nodemon
